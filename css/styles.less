@@ -1,0 +1,111 @@
+// ------------------------
+//      Variables
+// ------------------------
+
+// Colores
+@negro: #000000;
+@blanco: #FFFFFF;
+@amarillo: #FAD201;
+
+// Fuentes
+@fuente-ppal: 'Sarala', sans-serif;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+    font-family: @fuente-ppal;
+    color: @negro;
+}
+
+
+// -------------------
+//      Encabezado
+// -------------------
+header{
+    .titulo-menu{
+        width: 100%;
+        // max-width: 1080px;
+        margin: 0 auto;
+
+        .top-header{
+            background-color: @negro;
+            color: @blanco;
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 0.21875rem;
+            padding: 0.5rem 0;
+        }
+
+        .center-header{
+            text-align: center;
+            padding: 2.125rem 0;
+            font-size: 1.5rem;
+        }
+
+        .menu{
+            width: 90%;
+            max-width: 1170px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            border-top: 1px solid @negro;
+            border-bottom: 1px solid @negro;
+            padding: 0.375rem 0;
+
+            a{
+                text-decoration: none;
+                color: @negro;
+                font-size: 1rem;
+
+                &:hover{
+                    color: darken(@amarillo, 5%);
+                }
+            }
+        }
+    }
+}
+// -------------------
+//     fin Encabezado
+// -------------------
+
+// -------------------
+//     Main
+// -------------------
+.main{
+    width: 100%;
+    // margin: 0 auto;
+
+    .seccion-principal{
+        width: 90%;
+        max-width: 1170px;
+        margin: 0 auto;
+
+        .col{
+            width: 50%;
+
+            .formulario-calculo{
+                h2{
+                    font-size: 2rem;
+                }
+
+                .input-group{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    
+}
+
+// -------------------
+//     fin Main
+// -------------------
+
+
