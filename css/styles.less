@@ -30,7 +30,6 @@ body{
 header{
     .titulo-menu{
         width: 100%;
-        // max-width: 1080px;
         margin: 0 auto;
 
         .top-header{
@@ -80,32 +79,150 @@ header{
 // -------------------
 .main{
     width: 100%;
-    // margin: 0 auto;
 
     .seccion-principal{
-        width: 90%;
+        width: 85%;
         max-width: 1170px;
-        margin: 0 auto;
+        margin: 40px auto;
+        max-height: 430px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
 
         .col{
             width: 50%;
+        
+            &.izq{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
 
             .formulario-calculo{
+                padding-left: 85px;
+                
                 h2{
-                    font-size: 2rem;
+                    font-size: 2.5rem;
+                    margin-bottom: 15px;
                 }
 
                 .input-group{
-                    font-size: 1rem;
+                    font-size: 1.5rem;
+                    padding: 12px 0;
+
+                    input{
+                        margin-left: 18px;
+                        max-width: 25%;
+                        outline: none;
+                        border: none;
+                        border-bottom: 1px solid @negro;
+                        font-size: 1.2rem;
+                    }
+                }
+
+                input[type="submit"]{
+                    background-color: darken(@amarillo, 2.5%);
+                    color: @blanco;
+                    font-size: 20px;
+                    width: 28%;
+                    border: none;
+                    border-radius: 10px;
+                    padding: 12px 0;
+                    font-weight: 600;
+                    margin-top: 28px;
+                    cursor: pointer;
+                    transition: all .4s ease;
+                    &:hover{
+                        background-color: @negro;
+                        transform: translate(0, -5px);
+                        box-shadow: 0 7px 25px gray;
+                    }
                 }
             }
+
+            &.der{
+                overflow: hidden;
+            }
+
+            .slider{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                width: 300%;
+
+                .slide{
+                    width: 100%;
+                    max-width: 390px;
+                    min-height: 380px;
+                    margin: 0 auto;
+                    background-size: cover;
+                    background-position: center;
+
+                    &.foto1{
+                        background-image: url('../img/img1.jpg');
+                    }
+                    &.foto2{
+                        background-image: url(../img/agua.jpg);
+                    }
+                    &.foto3{
+                        background-image: url(../img/img1.jpg);
+                    }
+                }
+                
+            }
+
+            
+            
         }
     }
     
 }
-
 // -------------------
 //     fin Main
 // -------------------
+
+// -------------------
+//     Footer
+// -------------------
+footer{
+    width: 100%;
+    background-color: @negro;
+    color: @blanco;
+    padding: 50px 0;
+
+    .copyright-git{
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 0.9rem;
+
+        p{
+            
+            font-weight: 400;
+            padding-bottom: 10px;
+        }
+
+        .github{
+            a{
+                text-decoration: none;
+                color: @blanco;
+
+                &:hover{
+                    color: darken(@amarillo, 5%);
+                }
+            }
+
+            span{
+                margin-left: 10px;
+            }
+        }
+
+    }
+
+}
+
 
 

@@ -48,16 +48,110 @@ header .titulo-menu .menu a:hover {
   width: 100%;
 }
 .main .seccion-principal {
-  width: 90%;
+  width: 85%;
   max-width: 1170px;
-  margin: 0 auto;
+  margin: 40px auto;
+  max-height: 430px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .main .seccion-principal .col {
   width: 50%;
 }
+.main .seccion-principal .col.izq {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.main .seccion-principal .col .formulario-calculo {
+  padding-left: 85px;
+}
 .main .seccion-principal .col .formulario-calculo h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 .main .seccion-principal .col .formulario-calculo .input-group {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  padding: 12px 0;
+}
+.main .seccion-principal .col .formulario-calculo .input-group input {
+  margin-left: 18px;
+  max-width: 25%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #000000;
+  font-size: 1.2rem;
+}
+.main .seccion-principal .col .formulario-calculo input[type="submit"] {
+  background-color: #edc701;
+  color: #ffffff;
+  font-size: 20px;
+  width: 28%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 0;
+  font-weight: 600;
+  margin-top: 28px;
+  cursor: pointer;
+  transition: all .4s ease;
+}
+.main .seccion-principal .col .formulario-calculo input[type="submit"]:hover {
+  background-color: #000000;
+  transform: translate(0, -5px);
+  box-shadow: 0 7px 25px gray;
+}
+.main .seccion-principal .col.der {
+  overflow: hidden;
+}
+.main .seccion-principal .col .slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 300%;
+}
+.main .seccion-principal .col .slider .slide {
+  width: 100%;
+  max-width: 390px;
+  min-height: 380px;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+}
+.main .seccion-principal .col .slider .slide.foto1 {
+  background-image: url('../img/img1.jpg');
+}
+.main .seccion-principal .col .slider .slide.foto2 {
+  background-image: url(../img/agua.jpg);
+}
+.main .seccion-principal .col .slider .slide.foto3 {
+  background-image: url(../img/img1.jpg);
+}
+footer {
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 50px 0;
+}
+footer .copyright-git {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.9rem;
+}
+footer .copyright-git p {
+  font-weight: 400;
+  padding-bottom: 10px;
+}
+footer .copyright-git .github a {
+  text-decoration: none;
+  color: #ffffff;
+}
+footer .copyright-git .github a:hover {
+  color: #e1bd01;
+}
+footer .copyright-git .github span {
+  margin-left: 10px;
 }
