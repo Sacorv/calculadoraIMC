@@ -30,21 +30,24 @@ body{
 header{
     .titulo-menu{
         width: 100%;
-        margin: 0 auto;
+        position: fixed;
+        // z-index: 99;
+        top: 0;
+        background-color: @blanco;
 
         .top-header{
             background-color: @negro;
             color: @blanco;
             text-align: center;
-            font-size: 0.8rem;
-            letter-spacing: 0.21875rem;
-            padding: 0.5rem 0;
+            font-size: 0.6rem;
+            letter-spacing: 0.375rem;
+            padding: 0.4rem 0;
         }
 
         .center-header{
             text-align: center;
-            padding: 2.125rem 0;
-            font-size: 1.5rem;
+            padding: 20px 0;
+            font-size: 1.7rem;
         }
 
         .menu{
@@ -56,18 +59,65 @@ header{
             justify-content: space-around;
             border-top: 1px solid @negro;
             border-bottom: 1px solid @negro;
-            padding: 0.375rem 0;
+            padding: 4.3px 0;
 
             a{
                 text-decoration: none;
                 color: @negro;
-                font-size: 1rem;
+                font-size: 0.97rem;
+                letter-spacing: 0.09375rem;
 
                 &:hover{
                     color: darken(@amarillo, 5%);
                 }
             }
         }
+        //----------------menu burger-------------
+        .menu-desplegable{
+            display: none;
+
+            .burger-menu{
+                cursor: pointer;
+                font-size: 2.1875rem;
+                padding: 20px 15px;
+            }
+
+            .slide-menu{
+                position: fixed;
+                top: 120px;
+                left: -80%; //menu oculto
+                width: 75%;
+                text-align: center;
+                padding: 0 10px;
+                background-color: @negro;
+                transition: all .3s ease;
+                
+                &.active{
+                    left: 0; //se muestra el menu
+                }
+            }
+            .menu-movil{
+                width: 90%;
+                max-width: 1170px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+    
+                a{
+                    text-decoration: none;
+                    color: @blanco;
+                    font-size: 18px;
+                    letter-spacing: 0.09375rem;
+                    border-top: 1px solid fade(@blanco, 40%);
+                    padding: 14.5px ;
+
+                    &:hover{
+                        color: darken(@amarillo, 5%);
+                    }
+                }
+            }
+        }
+        
     }
 }
 // -------------------
@@ -79,6 +129,7 @@ header{
 // -------------------
 .main{
     width: 100%;
+    margin-top: 225px;
 
     .seccion-principal{
         width: 85%;
@@ -102,7 +153,7 @@ header{
             }
 
             .formulario-calculo{
-                padding-left: 85px;
+                padding-left: 10px;
                 
                 h2{
                     font-size: 2.5rem;
@@ -110,8 +161,8 @@ header{
                 }
 
                 .input-group{
-                    font-size: 1.5rem;
-                    padding: 12px 0;
+                    font-size: 1.3rem;
+                    padding: 13px 0;
 
                     input{
                         margin-left: 18px;
@@ -134,6 +185,7 @@ header{
                     font-weight: 600;
                     margin-top: 28px;
                     cursor: pointer;
+                    outline: none;
                     transition: all .4s ease;
                     &:hover{
                         background-color: @negro;
@@ -155,20 +207,22 @@ header{
 
                 .slide{
                     width: 100%;
-                    max-width: 390px;
-                    min-height: 380px;
+                    max-width: 530px;
+                    min-height: 350px;
                     margin: 0 auto;
                     background-size: cover;
                     background-position: center;
+                    // border: 1px solid @negro;
+                    // box-shadow: 1px 8px 20px gray;
 
                     &.foto1{
-                        background-image: url('../img/img1.jpg');
+                        background-image: url('../img/comida.jpg');
                     }
                     &.foto2{
-                        background-image: url(../img/agua.jpg);
+                        background-image: url(../img/peso.jpg);
                     }
                     &.foto3{
-                        background-image: url(../img/img1.jpg);
+                        background-image: url(../img/agua.jpg);
                     }
                 }
                 
@@ -217,6 +271,7 @@ footer{
 
             span{
                 margin-left: 10px;
+                font-size: 1.4rem;
             }
         }
 
@@ -224,5 +279,151 @@ footer{
 
 }
 
+// Media Queries
+@media all and (max-width: 960px){
+    .main{
+        margin-top: 200px;
+    }
+    .main .seccion-principal .col.der{
+        display: none;
+    } 
+    .main .seccion-principal .col.izq{
+        width: 100%;
+      
+        .form{
+            width: 100%;
+           
+            .formulario-calculo{
+                margin-left: 27%;
 
+                h2{
+                    font-size: 2.5rem;
+                }
+
+                .input-group{
+                    font-size: 1.375rem;
+
+                    #cc{
+                        max-width: 20%;
+                    }
+                   
+                }
+               
+                input[type="submit"]{
+                    display: block;
+                    width: 60%;
+                    margin-top: 25px;
+                    padding: 15px 0;
+                }
+            }
+        } 
+       
+    }
+    
+}
+
+@media all and (max-width: 780px){
+    header{
+        .titulo-menu {
+            .top-header{
+                font-size: 0.625rem;
+                letter-spacing: 0.1875rem;
+            }
+            .header-fijo{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-around;
+                border-bottom: 2px solid @negro;
+                width: 90%;
+                max-width: 1170px;
+                margin: 0 auto;
+
+                .center-header{
+                    font-size: 1.21875rem;
+                    width: 50%;
+                }
+
+                .menu{
+                    display: none;
+                }
+                .menu-desplegable{
+                    display: flex;
+                }
+
+            }
+        }
+    }
+
+    .main{
+        margin-top: 158px;
+    }
+    .main .seccion-principal .col.izq .form{
+        .formulario-calculo{
+            margin-left: 23%;
+            h2{
+                font-size: 2.34375rem;
+            }
+            .input-group{
+                font-size: 1.25rem;
+            }
+
+            input[type="submit"]{
+                font-size: 1.125rem;
+            }
+        }
+    }
+
+    footer{
+        padding: 26px 0;
+    }
+}
+
+@media all and (max-width: 580px){
+    header{
+        .titulo-menu .top-header{
+            font-size: 0.59375rem;
+            letter-spacing: 2px;
+        }
+        .titulo-menu .header-fijo {
+            .center-header{
+                font-size: 0.85rem;
+            }
+            .menu-desplegable{
+                .burger-menu{
+                    font-size: 1.5rem;
+                    padding-top: 24px;
+                }
+            }
+        }
+    }
+   
+    .main .seccion-principal .col.izq .form{
+        .formulario-calculo{
+            margin-left: 0;
+            padding-left: 15%;
+
+            h2{
+                font-size: 1.625rem;
+            }
+            .input-group{
+                font-size: 1.125rem;
+            }
+        }
+    }
+
+    footer{
+        .copyright-git{
+            font-size: 0.65rem;
+        }
+    }
+}
+
+@media all and (max-width: 420px){
+    .main .seccion-principal{
+        width: 100%;
+        margin-left: -15px;
+        
+    }
+}
 
