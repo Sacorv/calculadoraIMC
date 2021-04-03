@@ -31,9 +31,10 @@ header{
     .titulo-menu{
         width: 100%;
         position: fixed;
-        // z-index: 99;
+        z-index: 99;
         top: 0;
         background-color: @blanco;
+        min-height: 230px;
 
         .top-header{
             background-color: @negro;
@@ -129,7 +130,7 @@ header{
 // -------------------
 .main{
     width: 100%;
-    margin-top: 225px;
+    margin-top: 230px;
 
     .seccion-principal{
         width: 85%;
@@ -156,12 +157,12 @@ header{
                 padding-left: 10px;
                 
                 h2{
-                    font-size: 2.5rem;
+                    font-size: 2.9rem;
                     margin-bottom: 15px;
                 }
 
                 .input-group{
-                    font-size: 1.3rem;
+                    font-size: 1.5rem;
                     padding: 13px 0;
 
                     input{
@@ -175,7 +176,7 @@ header{
                 }
 
                 input[type="submit"]{
-                    background-color: darken(@amarillo, 2.5%);
+                    background-color: darken(@amarillo, 7%);
                     color: @blanco;
                     font-size: 20px;
                     width: 28%;
@@ -207,13 +208,12 @@ header{
 
                 .slide{
                     width: 100%;
-                    max-width: 530px;
+                    // max-width: 550px;
                     min-height: 350px;
                     margin: 0 auto;
                     background-size: cover;
                     background-position: center;
-                    // border: 1px solid @negro;
-                    // box-shadow: 1px 8px 20px gray;
+                    border-radius: 6px;
 
                     &.foto1{
                         background-image: url('../img/comida.jpg');
@@ -222,7 +222,7 @@ header{
                         background-image: url(../img/peso.jpg);
                     }
                     &.foto3{
-                        background-image: url(../img/agua.jpg);
+                        background-image: url(../img/water.jpg);
                     }
                 }
                 
@@ -282,7 +282,7 @@ footer{
 // Media Queries
 @media all and (max-width: 960px){
     .main{
-        margin-top: 200px;
+        margin-top: 220px;
     }
     .main .seccion-principal .col.der{
         display: none;
@@ -325,6 +325,7 @@ footer{
 @media all and (max-width: 780px){
     header{
         .titulo-menu {
+            min-height: 170px;
             .top-header{
                 font-size: 0.625rem;
                 letter-spacing: 0.1875rem;
@@ -356,7 +357,7 @@ footer{
     }
 
     .main{
-        margin-top: 158px;
+        margin-top: 170px;
     }
     .main .seccion-principal .col.izq .form{
         .formulario-calculo{
@@ -375,12 +376,15 @@ footer{
     }
 
     footer{
-        padding: 26px 0;
+        padding: 35.1px 0;
     }
 }
 
 @media all and (max-width: 580px){
     header{
+        .titulo-menu{
+            min-height: 100px;
+        }
         .titulo-menu .top-header{
             font-size: 0.59375rem;
             letter-spacing: 2px;
@@ -398,32 +402,65 @@ footer{
         }
     }
    
+    .main{
+        margin-top: 95px;
+        padding-top: 30px;
+    }
+    .main .seccion-principal{
+        margin: 28px auto;
+        margin-bottom: 50px;
+    }
+      
     .main .seccion-principal .col.izq .form{
         .formulario-calculo{
             margin-left: 0;
             padding-left: 15%;
 
             h2{
-                font-size: 1.625rem;
+                font-size: 34.6px;
+                margin-bottom: 20px;
             }
             .input-group{
-                font-size: 1.125rem;
+                font-size: 22px;
             }
         }
     }
 
     footer{
         .copyright-git{
-            font-size: 0.65rem;
+            font-size: 12px;
         }
     }
 }
 
-@media all and (max-width: 420px){
+@media all and (max-width: 490px){
+    .main .seccion-principal{
+        margin: 32px auto;
+        margin-bottom: 55px;
+    }
+
     .main .seccion-principal{
         width: 100%;
         margin-left: -15px;
         
     }
+    .main .seccion-principal .col.izq .form{
+        .formulario-calculo{
+            h2{
+                margin-bottom: 18px;
+            }
+            .input-group{
+                font-size: 18.2px;
+                padding: 13.8px 0;
+            }
+        }
+    }
+    footer{
+        padding: 22.7px;
+        .copyright-git{
+            font-size: 9.6px;
+        }
+    }
+
 }
 
